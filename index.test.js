@@ -20,6 +20,9 @@ describe('Band, Musician, and Song Models', () => {
         });
         expect(band.name).toBe('Have a Nice Life');
         expect(band.genre).toBe('Post-Rock');
+
+        const bands = await Band.findAll();
+        expect(bands.length).toBe(1);
     })
 
     test('can create a Musician', async () => {
@@ -30,6 +33,9 @@ describe('Band, Musician, and Song Models', () => {
         });
         expect(musician.name).toBe('Van Halen');
         expect(musician.instrument).toBe('Guitar');
+
+        const bands = await Band.findAll();
+        expect(bands.length).toBe(1);
     })
 
     test('can create a Song', async () => {
@@ -42,6 +48,9 @@ describe('Band, Musician, and Song Models', () => {
         expect(song.title).toBe('Save Me');
         expect(song.year).toBe(2010);
         expect(song.length).toBe(11);
+
+        const bands = await Band.findAll();
+        expect(bands.length).toBe(1);
     })  
 
     test('can update a Band', async () => {
