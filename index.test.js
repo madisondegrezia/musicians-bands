@@ -74,7 +74,7 @@ describe('Band, Musician, and Song Models', () => {
         expect(musician.name).toBe('Van Halen');
         expect(musician.instrument).toBe('Guitar');
         
-        const updatedMusician = await band.update({
+        const updatedMusician = await musician.update({
             name: 'Michael Jackson', 
             instrument: 'Vocals'
         })
