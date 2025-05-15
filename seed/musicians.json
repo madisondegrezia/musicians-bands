@@ -1,0 +1,18 @@
+[
+  {
+    "name": "John Lennon",
+    "instrument": "Guitar"
+  },
+  {
+    "name": "Paul McCartney",
+    "instrument": "Bass"
+  },
+  {
+    "name": "George Harrison",
+    "instrument": "Guitar"
+  },
+  {
+    "name": "Ringo Starr",
+    "instrument": "Drums"
+  }
+]
