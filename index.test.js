@@ -175,9 +175,24 @@ describe("Band, Musician, and Song Models", () => {
             include: Song
         });
 
-        expect(bandsWithSongs[0].Songs.length).toBe(1);
+        expect(bandsWithSongs[1].Songs.length).toBe(1);
 
         await band.destroy();
         await song.destroy();
+    })
+
+    test('testing eager loading', async () => {
+      //find all bands -> bandfindall include, test output
+      const bands = await Band.findAll( {
+        include: Musician
+      })
+
+      expect(bands).toBeInstanceOf(Array)
+      
+      const bands2 = await Band.findAll( {
+        include: Song
+      })
+
+      expect(bands2).toBeInstanceOf(Array)
     })
 });

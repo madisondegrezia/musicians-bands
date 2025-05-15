@@ -7,11 +7,11 @@ Manager.init(
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     salary: DataTypes.FLOAT,
-    dateHired: DataTypes.DATE,
+    dateHired: DataTypes.DATE
   },
   {
-    sequelize,
-    modelName: 'Manager',
+    sequelize: sequelize,
+    modelName: 'Manager'
   }
 );
 
