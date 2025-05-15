@@ -131,4 +131,28 @@ describe('Band, Musician, and Song Models', () => {
         const songs = await Song.findAll();
         expect(songs.length).toBe(0);
     })
+
+    test('can create a many-to-many relationship between Band and Song', async () => {
+        // TODO - test creating a many-to-many relationship
+        const band = await Band.create({ 
+            name: 'Have a Nice Life', 
+            genre: 'Post-Rock' 
+        });
+        const song = await Song.create({ 
+            title: 'Save Me', 
+            year: 2010, 
+            length: 11
+        });
+
+        await band.addSong(song);
+
+        const bandsWithSongs = await Band.findAll({
+            include: Song
+        });
+
+        expect(bandsWithSongs[0].Songs.length).toBe(1);
+
+        await band.destroy();
+        await song.destroy();
+    })
 })
